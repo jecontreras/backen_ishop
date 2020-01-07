@@ -22,7 +22,9 @@ module.exports.routes = {
   // '/': { view: 'pages/homepage' },
   'POST /themovie/get_articulo': 'ThemoviedbController.get_articulo',
   'POST /themovie/get_categoria': 'ThemoviedbController.get_categoria',
+  'POST /themovie/get_articulo_id': 'ThemoviedbController.get_articulo_id',
 
+  'POST /articulo/querys': 'ArticuloController.querys',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
