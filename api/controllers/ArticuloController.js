@@ -9,7 +9,7 @@ let Procedures = Object();
 Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
-    resultado = await QuerysServices("Articulo",params);
+    resultado = await QuerysServices(Articulo,params);
     return res.ok( { status: 200, ...resultado } );
 }
 
