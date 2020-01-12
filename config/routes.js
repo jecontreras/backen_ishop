@@ -25,6 +25,7 @@ module.exports.routes = {
   'POST /themovie/get_articulo_id': 'ThemoviedbController.get_articulo_id',
 
   'POST /app/querys': 'AppController.querys',
+  'POST /menu/querys': 'MenuController.querys',
   'POST /archivo/querys': 'ArchivoController.querys',
   'POST /articulo_categoria/querys': 'ArticuloCategoriaController.querys',
   'POST /articulo/querys': 'ArticuloController.querys',
