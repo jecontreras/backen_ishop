@@ -20,30 +20,6 @@ module.exports.routes = {
   ***************************************************************************/
 
   // '/': { view: 'pages/homepage' },
-  'POST /themovie/get_articulo': 'ThemoviedbController.get_articulo',
-  'POST /themovie/get_categoria': 'ThemoviedbController.get_categoria',
-  'POST /themovie/get_articulo_id': 'ThemoviedbController.get_articulo_id',
-
-  'POST /app/querys': 'AppController.querys',
-  'POST /menu/querys': 'MenuController.querys',
-  'POST /archivo/querys': 'ArchivoController.querys',
-  'POST /articulo_categoria/querys': 'ArticuloCategoriaController.querys',
-  'POST /articulo/querys': 'ArticuloController.querys',
-  'POST /cart_articulo/querys': 'CartarticuloController.querys',
-  'POST /cart/querys': 'CartController.querys',
-  'POST /categoria/querys': 'CategoriaController.querys',
-  'POST /categoria_user/querys': 'CategoriaUserController.querys',
-  'POST /chat/querys': 'ChatController.querys',
-  'POST /chatdetallado/querys': 'ChatdetalladoController.querys',
-  'POST /comentario/querys': 'ComentarioController.querys',
-  'POST /empresa/querys': 'EmpresaController.querys',
-  'POST /galeria/querys': 'GaleriaController.querys',
-  'POST /marca/querys': 'MarcaController.querys',
-  'POST /negocios/querys': 'NegociosController.querys',
-  'POST /notificacion/querys': 'NotificacionController.querys',
-  'POST /rol/querys': 'RolController.querys',
-  'POST /user/querys': 'UserController.querys',
-  'POST /user_rol/querys': 'UserRolController.querys',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

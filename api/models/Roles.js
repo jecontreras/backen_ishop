@@ -1,5 +1,5 @@
 /**
- * Categoria.js
+ * Roles.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,15 +8,19 @@
 module.exports = {
 
   attributes: {
-    idSubcategoria:{
-        model: 'subcategoria'
+
+    rol:{
+        type: 'string',
+        required: true
     },
-    nombre:{
+    detalle:{
         type: 'string'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
-    }
+        type: 'number',  //0 activo - 1 eliminado 
+        required: true
+    },
+
   },
 
 };
