@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   // '/': { view: 'pages/homepage' },
+  'POST /menu/querys': 'MenuController.querys',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
