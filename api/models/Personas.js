@@ -41,6 +41,18 @@ module.exports = {
         type: 'string',
         required: true
     },
+    nombre:{
+        type: 'string',
+        required: true  
+    },
+    apellido:{
+        type: 'string',
+        required: true  
+    },
+    celular:{
+        type: 'string',
+        required: true  
+    },
     username:{
         type: 'string',
         required: true
@@ -49,10 +61,14 @@ module.exports = {
         type: 'string'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
     }
 
   },
+    customToJSON: function(){
+    return _.omit(this, ['password', 'salt']);
+  }
 
 };
 
