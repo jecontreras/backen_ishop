@@ -7,7 +7,7 @@
 
 let Procedures = Object();
 
-Procedures.find = async(req, res)=>{
+Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
     resultado = await QuerysServices(Bancos,params);
