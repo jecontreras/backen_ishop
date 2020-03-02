@@ -9,6 +9,14 @@ module.exports = {
 
   attributes: {
 
+    titulo:{
+        type: 'string',
+        required: true
+    },
+    slug: {
+        type: 'string',
+        required: true
+    },
     idSubCategoria: {
         model: 'subcategoria',
         required: true
@@ -16,6 +24,10 @@ module.exports = {
     idEmpresa: {
         model: 'empresas',
         required: true
+    },
+    cantidad:{
+        type: 'integer',
+        defaultsTo: 0
     },
     precioVenta:{
         type: 'integer',
@@ -32,9 +44,6 @@ module.exports = {
     detalle:{
         type: 'string'
     },
-    ofertas: {
-        type: 'integer'
-    },
     subasta: {
         type: 'boolean'
     },
@@ -42,7 +51,8 @@ module.exports = {
         model: 'pesos'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
     },
 
   },

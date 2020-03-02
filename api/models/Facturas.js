@@ -8,19 +8,25 @@
 module.exports = {
 
   attributes: {
-    idProducto:{
-        model: 'productos',
-        required: true
-    },
     idCliente:{
         model: 'personas',
         required: true
     },
     idVendedor:{
-        model: 'personas'
+        model: 'personas',
+        required: true
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
+    },
+    codigo:{
+        type: 'string',
+        required: true
+    },
+    precio:{
+        type: 'integer',
+        defaultsTo: 0
     }
   },
 

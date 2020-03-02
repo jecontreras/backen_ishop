@@ -1,18 +1,23 @@
 module.exports = [
   {
-    "icon": "home",
-    "name": "Inicio",
-    "redirectTo": "/home"
-  },
-  {
     "icon": "notifications-outline",
     "name": "Notificaciones",
-    "redirectTo": "/notificacion"
+    "redirectTo": "/tabs/notificacion"
   },
   {
     "icon": "mail-unread",
-    "name": "Mensaje",
-    "redirectTo": "/chat"
-  }
+    "name": "Ofertas",
+    "redirectTo": "/tabs/ofertas"
+  },
+  {
+    "icon": "mail-unread",
+    "name": "Categorias",
+    "redirectTo": "/tabs/categorias"
+  },
+  {
+    "icon": "mail-unread",
+    "name": "Clientes",
+    "redirectTo": "/tabs/clientes"
+  },
 ];
   
