@@ -5,17 +5,22 @@ module.exports = [
     "redirectTo": "/tabs/notificacion"
   },
   {
-    "icon": "mail-unread",
+    "icon": "megaphone-outline",
     "name": "Ofertas",
     "redirectTo": "/tabs/ofertas"
   },
   {
-    "icon": "mail-unread",
+    "icon": "gift-outline",
+    "name": "Regalos",
+    "redirectTo": "/tabs/regalos"
+  },
+  {
+    "icon": "filter-outline",
     "name": "Categorias",
     "redirectTo": "/tabs/categorias"
   },
   {
-    "icon": "mail-unread",
+    "icon": "people-outline",
     "name": "Clientes",
     "redirectTo": "/tabs/clientes"
   },
