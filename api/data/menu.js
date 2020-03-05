@@ -1,18 +1,28 @@
 module.exports = [
   {
-    "icon": "home",
-    "name": "Inicio",
-    "redirectTo": "/home"
-  },
-  {
     "icon": "notifications-outline",
     "name": "Notificaciones",
-    "redirectTo": "/notificacion"
+    "redirectTo": "/tabs/notificacion"
   },
   {
-    "icon": "mail-unread",
-    "name": "Mensaje",
-    "redirectTo": "/chat"
-  }
+    "icon": "megaphone-outline",
+    "name": "Ofertas",
+    "redirectTo": "/tabs/ofertas"
+  },
+  {
+    "icon": "gift-outline",
+    "name": "Regalos",
+    "redirectTo": "/tabs/regalos"
+  },
+  {
+    "icon": "filter-outline",
+    "name": "Categorias",
+    "redirectTo": "/tabs/categorias"
+  },
+  {
+    "icon": "people-outline",
+    "name": "Clientes",
+    "redirectTo": "/tabs/clientes"
+  },
 ];
   

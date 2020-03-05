@@ -90,5 +90,16 @@ Procedures.querys = async(req, res)=>{
     return res.ok( { status: 200, ...resultado } );
 }
 
+Procedures.clientes = async(req, res)=>{
+    let params = req.allParams();
+    let resultado = Object();
+    if(!params.where) params.where = params;
+    //console.log("***", params)
+    params.where.rol = await Roles.findOne({rol: "cliente"});
+    params.where.rol = params.where.rol.id;
+    resultado = await QuerysServices(Personas,params);
+    return res.ok( { status: 200, ...resultado } );
+}
+
 
 module.exports = Procedures;

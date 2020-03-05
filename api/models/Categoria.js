@@ -15,7 +15,8 @@ module.exports = {
         type: 'string'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
     }
   },
 

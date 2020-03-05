@@ -10,8 +10,14 @@ let Procedures = Object();
 Procedures.querys = async (req, res) => {
     let params = req.allParams();
     let resultado = Object();
-    resultado = await QuerysServices(Productos, params);
-    return res.ok({ status: 200, ...resultado });
+
+    resultado = await QuerysServices(Productos,params);
+    for(let row of resultado.data){
+    	row.idEmpresa = await Empresas.findOne({id: row.idEmpresa});
+    	row.files = ["./assets/product.jpg"];
+    }
+
+    return res.ok( { status: 200, ...resultado } );
 }
 
 Procedures.uploadProducto = function (req, res) {

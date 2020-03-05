@@ -11,6 +11,10 @@ module.exports = {
     idPersona:{
         model:'personas'
     },
+    calificacion:{
+        type: 'integer',
+        defaultsTo: 0
+    },
     idProducto:{
         model: 'productos'
     },
@@ -18,7 +22,8 @@ module.exports = {
         model: 'comentarios'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
     }
 
   },
