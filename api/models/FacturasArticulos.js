@@ -13,6 +13,17 @@ module.exports = {
         model: 'facturas',
         required: true
     },
+    precio:{
+        type: 'integer',
+        required: true
+    },
+    cantidad:{
+      type: 'integer',
+      required: true
+    },
+    descripcion:{
+        type: 'string'
+    },
     producto:{
         model: 'productos',
         required: true

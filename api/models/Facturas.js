@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
     idCliente:{
-        model: 'personas',
+        model: 'clientes',
         required: true
     },
     idVendedor:{
@@ -27,7 +27,34 @@ module.exports = {
     precio:{
         type: 'integer',
         defaultsTo: 0
+    },
+    comision:{
+        type: 'integer',
+        defaultsTo: 0
+    },
+    emailCliente:{
+        type: 'string',
+    },
+    cedulaCliente:{
+        type: 'string',
+        required: true
+    },
+    numeroCliente:{
+        type: 'string',
+        required: true
+    },
+    emailVendedor:{
+        type: 'string',
+    },
+    cedulaVendedor:{
+        type: 'string',
+        required: true
+    },
+    fecha_pedido:{
+        type: 'string',
+        required: true
     }
+
   },
 
 };

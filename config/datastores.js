@@ -49,7 +49,8 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
      adapter: 'sails-mysql',
-     url: 'mysql://root:@localhost/ishop',
+     //url: 'mysql://root:@localhost/ishop',
+     url: 'mysql://jose:123456@locomproaqui.com/ishop',
     //adapter: 'sails-mongo',
     //url: 'mongodb://jose147:jose1090519754@ds211718.mlab.com:11718/venty'
   },
