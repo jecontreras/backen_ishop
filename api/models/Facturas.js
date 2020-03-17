@@ -54,6 +54,9 @@ module.exports = {
         type: 'string',
         required: true
     },
+    direccionCliente:{
+        type: 'string',
+    },
     fecha_pedido:{
         type: 'string',
         required: true
