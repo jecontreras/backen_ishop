@@ -50,10 +50,13 @@ module.exports = {
     idPeso: {
         model: 'pesos'
     },
+    marca: {
+        model: 'marca'
+    },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
         defaultsTo: 0
-    },
+    }
 
   },
 
