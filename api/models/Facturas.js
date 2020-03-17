@@ -32,6 +32,10 @@ module.exports = {
         type: 'integer',
         defaultsTo: 0
     },
+    ciudadCliente:{ 
+        type: 'string',
+        required: true
+    },
     emailCliente:{
         type: 'string',
     },
