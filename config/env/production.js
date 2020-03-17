@@ -150,9 +150,19 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allRoutes: true,
+      methods: 'GET, POST, PUT, DELETE, HEAD',
+      allowOrigins: '*',
+      headers: (function(){
+        var headers = [
+          "access-control-allow-origin",
+          "authorization",
+          "content-type",
+          "hostname"
+        ];
+        return headers.join(',');
+      })(),
+      allowCredentials: false,
     },
 
   },

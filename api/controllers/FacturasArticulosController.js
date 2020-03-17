@@ -11,6 +11,9 @@ Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
     resultado = await QuerysServices(FacturasArticulos,params);
+    for(let row of resultado.data){
+    	row.producto = await Productos.findOne({id: row.producto});
+    }
     return res.ok( { status: 200, ...resultado } );
 }
 
