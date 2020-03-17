@@ -14,4 +14,31 @@ Procedures.querys = async(req, res)=>{
     return res.ok( { status: 200, ...resultado } );
 }
 
+Procedures.inicial = async(req, res)=>{
+    let params = req.allParams();
+    let resultado = Array();
+    let result = Array();
+    resultado = await Productos.find({ estado:0 }).populate('idEmpresa');
+    for(let row of resultado){
+        row.files = ["./assets/product.jpg"];
+        row.foto = "./assets/product.jpg";
+    }
+    result = [
+        {
+            titulo:"Nuevos Productos",
+            subtitle: "16 Productos desde $16.000",
+            descripcion: "Entrega de 5 a 10 dias hábiles",
+            productos: resultado
+        },
+        {
+            titulo:"Nuevos Colecciones",
+            subtitle: "16 Productos desde $16.000",
+            descripcion: "Entrega de 5 a 10 dias hábiles",
+            productos: resultado
+        }
+    ];
+    return res.status(200).send({status:200, data: result});
+    
+}
+
 module.exports = Procedures;
