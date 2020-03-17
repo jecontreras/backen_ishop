@@ -6,6 +6,7 @@
  */
 
 let Procedures = Object();
+var crypto = require("crypto");
 
 Procedures.querys = async (req, res) => {
     let params = req.allParams();
@@ -20,44 +21,17 @@ Procedures.querys = async (req, res) => {
     return res.ok( { status: 200, ...resultado } );
 }
 
-Procedures.uploadProducto = function (req, res) {
-    req.file('avatar').upload({
-        dirname: require('path').resolve(sails.config.appPath, 'assets/images')
-    }, function (err, uploadedFiles) {
-        if (err) return res.serverError(err);
-
-        return res.json({
-            message: uploadedFiles.length + ' file(s) uploaded successfully!'
-        });
-    });
+Procedures.upload = async (req, res) => {
+    let allParams = req.allParams();     
+    let response = Object();
+    response.img1 = await UploadService(req.file('fileKey0'));
+    response.img2 = await UploadService(req.file('fileKey1'));
+    response.img3 = await UploadService(req.file('fileKey2'));
+    response.img4 = await UploadService(req.file('fileKey3'));
+    response.img5 = await UploadService(req.file('fileKey4'));
+    return res.ok( { status: 200, ...response } );
 },
 
-Procedures.avatar = function (req, res) {
-
-    User.findOne(req.param('id')).exec(function (err, user) {
-        if (err) return res.serverError(err);
-        if (!user) return res.notFound();
-
-        // User has no avatar image uploaded.
-        // (should have never have hit this endpoint and used the default image)
-        if (!user.avatarFd) {
-            return res.notFound();
-        }
-
-        var SkipperDisk = require('skipper-disk');
-        var fileAdapter = SkipperDisk(/* optional opts */);
-
-        // set the filename to the same file as the user uploaded
-        res.set("Content-disposition", "attachment; filename='" + file.name + "'");
-
-        // Stream the file down
-        fileAdapter.read(user.avatarFd)
-            .on('error', function (err) {
-                return res.serverError(err);
-            })
-            .pipe(res);
-    });
-}
 
 
 module.exports = Procedures;

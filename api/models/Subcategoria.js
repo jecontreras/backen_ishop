@@ -19,6 +19,9 @@ module.exports = {
     },
     detalle:{
         type: 'string'
+    },
+    idCategoria:{
+      model: 'categoria'
     }
 
   },

@@ -32,28 +32,17 @@ module.exports.datastores = {
   *                                                                          *
   ***************************************************************************/
 
+  /* default: {
+    adapter: 'sails-mysql',
+    url: 'mysql://root:@localhost/ishop',
+  }, */
   default: {
-
-    /***************************************************************************
-    *                                                                          *
-    * Want to use a different database during development?                     *
-    *                                                                          *
-    * 1. Choose an adapter:                                                    *
-    *    https://sailsjs.com/plugins/databases                                 *
-    *                                                                          *
-    * 2. Install it as a dependency of your Sails app.                         *
-    *    (For example:  npm install sails-mysql --save)                        *
-    *                                                                          *
-    * 3. Then pass it in, along with a connection URL.                         *
-    *    (See https://sailsjs.com/config/datastores for help.)                 *
-    *                                                                          *
-    ***************************************************************************/
-     adapter: 'sails-mysql',
-     //url: 'mysql://root:@localhost/ishop',
-     url: 'mysql://jose:123456@locomproaqui.com/ishop',
-    //adapter: 'sails-mongo',
-    //url: 'mongodb://jose147:jose1090519754@ds211718.mlab.com:11718/venty'
+    adapter: 'sails-mysql',
+    url: 'mysql://hgMix7VrH0:VLDGqurCDh@remotemysql.com/hgMix7VrH0',
   },
-
+  cache: {
+    adapter: 'sails-redis',
+    url: 'redis://localhost:6379',
+  }
 
 };

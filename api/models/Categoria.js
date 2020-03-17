@@ -8,15 +8,16 @@
 module.exports = {
 
   attributes: {
-    idSubcategoria:{
-        model: 'subcategoria'
-    },
     nombre:{
         type: 'string'
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
         defaultsTo: 0
+    },
+    subCategorias: {
+      collection: 'subcategoria',
+      via: 'idCategoria'
     }
   },
 
