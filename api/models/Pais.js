@@ -16,7 +16,7 @@ module.exports = {
     estado:{
         type: 'number'  //0 activo - 1 eliminado 
     },
-    modena:{
+    moneda:{
         type: 'string'
     }
 

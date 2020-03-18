@@ -22,8 +22,7 @@ module.exports = {
         required: true
     },
     idEmpresa: {
-        model: 'empresas',
-        required: true
+        model: 'empresas'
     },
     cantidad:{
         type: 'integer',
@@ -52,6 +51,13 @@ module.exports = {
     },
     marca: {
         model: 'marca'
+    },
+    genero: {
+        model: 'generos' 
+    },
+    image: {
+        type: 'string',
+        defaultsTo: 'default.jpg'
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
