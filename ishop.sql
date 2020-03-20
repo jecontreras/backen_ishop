@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-03-2020 a las 05:17:08
+-- Tiempo de generación: 20-03-2020 a las 13:28:31
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.6
 
@@ -333,16 +333,17 @@ CREATE TABLE `multimedia` (
   `updatedAt` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `id` int(11) NOT NULL,
   `recurso` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `estado` double DEFAULT NULL
+  `estado` double DEFAULT NULL,
+  `producto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `multimedia`
 --
 
-INSERT INTO `multimedia` (`createdAt`, `updatedAt`, `id`, `recurso`, `estado`) VALUES
-('2020-03-18T03:34:08.022Z', '2020-03-18T03:34:08.022Z', 1, 'ea1423110cf35ee2df73b34be93a9dc206ae7784.jpg', 0),
-('2020-03-18T03:37:08.082Z', '2020-03-18T03:37:08.082Z', 2, '9fee2ad541203621adb37acccec08ba3331845f0.jpg', 0);
+INSERT INTO `multimedia` (`createdAt`, `updatedAt`, `id`, `recurso`, `estado`, `producto`) VALUES
+('2020-03-18T03:34:08.022Z', '2020-03-18T21:59:17.936Z', 1, 'ea1423110cf35ee2df73b34be93a9dc206ae7784.jpg', 0, 1),
+('2020-03-18T03:37:08.082Z', '2020-03-18T21:59:43.790Z', 2, '9fee2ad541203621adb37acccec08ba3331845f0.jpg', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -481,21 +482,22 @@ CREATE TABLE `productos` (
   `precioOferta` double DEFAULT NULL,
   `detalle` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `subasta` tinyint(1) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `rating` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `estado` double DEFAULT NULL,
   `idSubCategoria` int(11) DEFAULT NULL,
   `idEmpresa` int(11) DEFAULT NULL,
   `idPeso` int(11) DEFAULT NULL,
   `marca` int(11) DEFAULT NULL,
-  `genero` int(11) DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `genero` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`createdAt`, `updatedAt`, `id`, `titulo`, `slug`, `cantidad`, `precioVenta`, `precioCompra`, `precioOferta`, `detalle`, `subasta`, `estado`, `idSubCategoria`, `idEmpresa`, `idPeso`, `marca`, `genero`, `image`) VALUES
-('2020-03-18T03:37:08.197Z', '2020-03-18T04:12:08.011Z', 1, 'Zapato Hugo Boss', 'Zapato Hugo Boss', 5, 210000, 0, 0, 'Descripcion de prueba', 0, 0, 1, 1, NULL, 1, 6, '9fee2ad541203621adb37acccec08ba3331845f0.jpg');
+INSERT INTO `productos` (`createdAt`, `updatedAt`, `id`, `titulo`, `slug`, `cantidad`, `precioVenta`, `precioCompra`, `precioOferta`, `detalle`, `subasta`, `image`, `rating`, `estado`, `idSubCategoria`, `idEmpresa`, `idPeso`, `marca`, `genero`) VALUES
+('2020-03-18T03:37:08.197Z', '2020-03-18T21:57:50.787Z', 1, 'Zapato Hugo Boss', 'Zapato Hugo Boss', 5, 210000, 0, 0, 'Descripcion de prueba', 0, '9fee2ad541203621adb37acccec08ba3331845f0.jpg', '5', 0, 1, 1, NULL, 1, 6);
 
 -- --------------------------------------------------------
 

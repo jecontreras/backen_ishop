@@ -59,6 +59,14 @@ module.exports = {
         type: 'string',
         defaultsTo: 'default.jpg'
     },
+    image_galery: {
+        collection: 'multimedia',
+        via: 'producto'
+    },
+    rating: {
+        type: 'string',
+        defaultsTo: '5'
+    },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
         defaultsTo: 0
