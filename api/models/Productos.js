@@ -67,6 +67,10 @@ module.exports = {
         type: 'string',
         defaultsTo: '5'
     },
+    product_code: {
+        type: 'string',
+        defaultsTo: '16132243'
+    },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
         defaultsTo: 0

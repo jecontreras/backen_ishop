@@ -32,14 +32,14 @@ module.exports.datastores = {
   *                                                                          *
   ***************************************************************************/
 
-  default: {
-    adapter: 'sails-mysql',
-    url: 'mysql://root:@localhost:3306/ishop',
-  },
   /* default: {
     adapter: 'sails-mysql',
-    url: 'mysql://hgMix7VrH0:VLDGqurCDh@remotemysql.com/hgMix7VrH0',
+    url: 'mysql://root:@localhost:3306/ishop',
   }, */
+  default: {
+    adapter: 'sails-mysql',
+    url: 'mysql://hgMix7VrH0:VGUPmYulmO@remotemysql.com/hgMix7VrH0',
+  },
   cache: {
     adapter: 'sails-redis',
     url: 'redis://localhost:6379',
