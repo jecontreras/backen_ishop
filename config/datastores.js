@@ -44,10 +44,10 @@ module.exports.datastores = {
   },
 
   // Planeta
-  default: {
+  /* default: {
     adapter: 'sails-mysql',
-    url: 'mysql://luisalbertoj:c3a05fe00@mercardesdecasa.com/original-brands',
-  },
+    url: 'mysql://luisalbertoj:c3a05fe00@148.72.232.34/original-brands',
+  }, */
 
   cache: {
     adapter: 'sails-redis',
