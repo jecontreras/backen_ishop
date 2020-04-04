@@ -15,7 +15,8 @@ Procedures.querys = async (req, res) => {
     resultado = await QuerysServices(Productos, params);
     for (let row of resultado.data) {
         row.idEmpresa = await Empresas.findOne({ id: row.idEmpresa });
-        row.files = ["./assets/product.jpg"];
+        row.foto = row.image;
+        row.files = [ row.image ];
     }
 
     return res.ok({ status: 200, ...resultado });
