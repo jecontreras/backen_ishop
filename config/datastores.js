@@ -36,10 +36,19 @@ module.exports.datastores = {
     adapter: 'sails-mysql',
     url: 'mysql://root:@localhost:3306/ishop',
   }, */
+
+  // Ishop
   default: {
     adapter: 'sails-mysql',
-    url: 'mysql://luisalbertoj:c3a05fe00@sg2plcpnl0165.prod.sin2.secureserver.net:2083/original-brands',
+    url: 'mysql://jose:123456@locomproaqui.com/ishop',
   },
+
+  // Planeta
+  default: {
+    adapter: 'sails-mysql',
+    url: 'mysql://luisalbertoj:c3a05fe00@mercardesdecasa.com/original-brands',
+  },
+
   cache: {
     adapter: 'sails-redis',
     url: 'redis://localhost:6379',
