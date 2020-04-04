@@ -30,8 +30,7 @@ module.exports = {
         model: 'ciudad'
     },
     cedula:{
-        type: 'string',
-        required: true
+        type: 'string'
     },
     email:{
         type: 'string',
@@ -50,15 +49,15 @@ module.exports = {
         required: true  
     },
     celular:{
-        type: 'string',
-        required: true  
+        type: 'string'
     },
     username:{
         type: 'string',
         required: true
     },
     idFoto:{
-        type: 'string'
+        type: 'string',
+        defaultsTo: 'default-user.png'
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 

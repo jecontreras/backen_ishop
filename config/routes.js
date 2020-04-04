@@ -18,7 +18,9 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-      'POST /productos/upload' : 'ProductosController.upload'
+      'POST /productos/upload' : 'ProductosController.upload',
+      'POST /login' : 'PersonaController.login',
+      'POST /registro' : 'PersonaController.register'
   // '/': { view: 'pages/homepage' },
   //'POST /menu/querys': 'MenuController.querys',
   /***************************************************************************

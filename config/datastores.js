@@ -38,7 +38,7 @@ module.exports.datastores = {
   }, */
   default: {
     adapter: 'sails-mysql',
-    url: 'mysql://hgMix7VrH0:VGUPmYulmO@remotemysql.com/hgMix7VrH0',
+    url: 'mysql://luisalbertoj:c3a05fe00@sg2plcpnl0165.prod.sin2.secureserver.net:2083/original-brands',
   },
   cache: {
     adapter: 'sails-redis',

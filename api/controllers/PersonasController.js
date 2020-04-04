@@ -13,7 +13,8 @@ Procedures.register = async(req, res)=>{
     let
         params = req.allParams()
     ;
-  // sails.log.info(26, params);
+  sails.log.info(26, params);
+  console.log(params);
   if((params.password !== params.confirpassword) && (!params.username && !params.email && !params.cedula && !params.celular)) return res.ok({status: 400, data: "error en el envio de los datos"});
     //   Validando si existe  el usuario
   let user = await Personas.findOne({or : [{ username: params.username },{ email: params.email }]});
