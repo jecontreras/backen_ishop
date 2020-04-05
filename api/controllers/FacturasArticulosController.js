@@ -13,6 +13,7 @@ Procedures.querys = async(req, res)=>{
     resultado = await QuerysServices(FacturasArticulos,params);
     for(let row of resultado.data){
     	row.producto = await Productos.findOne({id: row.producto});
+    	if(row.producto) row.producto.foto = [ row.producto.image ];
     }
     return res.ok( { status: 200, ...resultado } );
 }
