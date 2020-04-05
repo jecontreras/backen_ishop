@@ -37,7 +37,7 @@ Procedures.create = async(req, res)=>{
         };
         let respor = await Procedures.createFacturaArticulo( data );
     }
-    let resultado = await Facturas.findOne({ id: resultado.id }).populate('idCliente').populate('idVendedor');
+    resultado = await Facturas.findOne({ id: resultado.id }).populate('idCliente').populate('idVendedor');
     resultado.productos = await FacturasArticulos.find({factura: resultado.id}).populate('producto');
     return res.ok({status:200, data: resultado });
 }
