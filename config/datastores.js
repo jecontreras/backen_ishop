@@ -42,7 +42,8 @@ module.exports.datastores = {
     // adapter: 'sails-mysql',
     // url: 'mysql://hgMix7VrH0:VLDGqurCDh@remotemysql.com/hgMix7VrH0',
     adapter: 'sails-mysql',
-    url: 'mysql://jose:123456@locomproaqui.com/ishop',
+    //url: 'mysql://jose:123456@locomproaqui.com/ishop',
+    url: '	x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
   },
 
   // Planeta
