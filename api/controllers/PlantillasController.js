@@ -20,8 +20,8 @@ Procedures.inicial = async(req, res)=>{
     let result = Array();
     resultado = await Productos.find({ estado:0 }).populate('idEmpresa');
     for(let row of resultado){
-        row.files = ["./assets/product.jpg"];
-        row.foto = "./assets/product.jpg";
+        row.files = [ row.image ];
+        row.foto = row.image;
     }
     result = [
         {

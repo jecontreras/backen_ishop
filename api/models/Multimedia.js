@@ -14,6 +14,9 @@ module.exports = {
     },
     estado:{
         type: 'number'  //0 activo - 1 eliminado 
+    },
+    producto: {
+      model: 'productos'
     }
   },
 

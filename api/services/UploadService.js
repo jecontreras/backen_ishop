@@ -8,7 +8,7 @@ module.exports = async(imagen)=>{
     }, (err, data) => {
         if(err) return false;
         sails.log(data);
-        return true;
+        return nombreImagen + '.jpg';
     }).readable;
     return result;
 };
