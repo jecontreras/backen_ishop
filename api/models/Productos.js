@@ -47,7 +47,7 @@ module.exports = {
         type: 'boolean'
     },
     idPeso: {
-        model: 'pesos'
+        type: 'integer'
     },
     marca: {
         model: 'marca'
@@ -63,13 +63,16 @@ module.exports = {
         collection: 'multimedia',
         via: 'producto'
     },
-    rating: {
-        type: 'string',
-        defaultsTo: '5'
+    ranking: {
+        type: 'integer',
+        defaultsTo: 5
     },
     product_code: {
         type: 'string',
         defaultsTo: '16132243'
+    },
+    comision:{
+        type: 'integer'
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 

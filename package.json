@@ -23,6 +23,7 @@
     "sails-mysql": "^1.0.1",
     "sails-redis": "^1.0.0",
     "sails.io.js": "^1.2.1",
+    "skipper-s3": "^0.6.0",
     "socket.io-client": "^2.3.0"
   },
   "devDependencies": {

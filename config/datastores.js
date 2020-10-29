@@ -41,9 +41,10 @@ module.exports.datastores = {
   default: {
     // adapter: 'sails-mysql',
     // url: 'mysql://hgMix7VrH0:VLDGqurCDh@remotemysql.com/hgMix7VrH0',
+    // adapter: 'sails-mysql',
     adapter: 'sails-mysql',
+     url: 'mysql://payx4la227r8eur7:zh4nxeg0lcvpsw14@x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ci5795aoj7r3l2xj',
     //url: 'mysql://jose:123456@locomproaqui.com/ishop',
-    url: '	x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
   },
 
   // Planeta
@@ -53,8 +54,8 @@ module.exports.datastores = {
   }, */
 
   cache: {
-    adapter: 'sails-redis',
-    url: 'redis://localhost:6379',
+     adapter: 'sails-redis',
+     url: 'redis://localhost:6379',
   }
 
 };
