@@ -19,6 +19,9 @@ module.exports = {
         type: 'number',  //0 activo - 1 eliminado 
         defaultsTo: 0
     },
+    tal_tipo:{
+        model: 'Tbltipotalla'
+    },
 
   },
 

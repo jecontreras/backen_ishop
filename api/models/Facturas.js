@@ -47,6 +47,9 @@ module.exports = {
         type: 'string',
         required: true
     },
+    barrioCliente:{
+        type: 'string'
+    },
     emailVendedor:{
         type: 'string',
     },
@@ -60,6 +63,12 @@ module.exports = {
     fecha_pedido:{
         type: 'string',
         required: true
+    },
+    detalles:{
+        type: 'string'
+    },
+    idRemesa:{
+        type: 'string'
     }
 
   },

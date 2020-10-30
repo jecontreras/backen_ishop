@@ -6,7 +6,7 @@
  */
 
 let Procedures = Object();
-
+let EstadosList = ["En Proceso", 'Completado', 'Eliminado', 'Cancelado', 'Novedad', 'Enviando'];
 Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
@@ -14,7 +14,8 @@ Procedures.querys = async(req, res)=>{
     for(let row of resultado.data){
     	row.idCliente = await Clientes.findOne({id: row.idCliente});
     	row.idVendedor = await Personas.findOne({id: row.idVendedor});
-    	row.productos = await FacturasArticulos.find({factura: row.id}).populate('producto');
+        row.productos = await FacturasArticulos.find({factura: row.id}).populate('producto');
+        row.estadoName = EstadosList[row.estado];
     }
     return res.ok( { status: 200, ...resultado } );
 }
@@ -51,7 +52,8 @@ Procedures.validarCliente = async(data)=>{
         "cedula": data.cedulaCliente,
         "celular": data.celularCliente,
         "email": data.emailCliente,
-        "direccion": data.direccionCliente
+        "direccion": data.direccionCliente,
+        "barrioCliente": data.barrioCliente
     };
     if(!resultado) resultado = await Procedures.createCliente(querys);
     return resultado;

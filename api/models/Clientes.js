@@ -37,6 +37,9 @@ module.exports = {
     },
     direccion:{
         type: 'string'
+    },
+    barrioCliente:{
+        type: 'string'
     }
 
   },
