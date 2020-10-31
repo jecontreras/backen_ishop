@@ -23,15 +23,31 @@ Procedures.inicial = async(req, res)=>{
         row.files = [ row.image ];
         row.foto = row.image;
     }
+    let personas = await Personas.find( { where: { estado: 0 } } ).limit( 10 );
+    for( let row of personas ) row.foto = row.idFoto;
     result = [
         {
+            titulo:"Vendedores del Mes",
+            subtitle: "Top 10 Vendedores del mes",
+            descripcion: "Los Vendedores con mayor venta en el mes seran recompensados",
+            tipo: 'vendedores',
+            productos: personas
+        },
+        {
             titulo:"Nuevos Productos",
+            subtitle: "16 Productos desde $16.000",
+            descripcion: "Entrega de 5 a 10 dias hábiles",
+            tipo: 'articulos',
+            productos: resultado
+        },
+        {
+            titulo:"Nuevos Colecciones",
             subtitle: "16 Productos desde $16.000",
             descripcion: "Entrega de 5 a 10 dias hábiles",
             productos: resultado
         },
         {
-            titulo:"Nuevos Colecciones",
+            titulo:"Productos en Oferta",
             subtitle: "16 Productos desde $16.000",
             descripcion: "Entrega de 5 a 10 dias hábiles",
             productos: resultado

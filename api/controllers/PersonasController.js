@@ -36,7 +36,21 @@ Procedures.register = async(req, res)=>{
   user = await Personas.create(params).fetch()
   user = await Personas.findOne({id: user.id}).populate('rol');
   if(!user) return res.badRequest(err);
+  let rrr = await Procedures.crearPuntosResumen( user );
   return res.ok({status: 200, data: user});
+}
+
+Procedures.crearPuntosResumen = async( data )=>{
+  return await ResumenPersona.create( { 
+    cantidadVentasTotales: 0,
+    gananciasVentasTotales: 0,
+    ventasEntregadasDetalles: 0,
+    ganaciasVentasDetalles: 0,
+    valanceGanarDetalles: 0,
+    ventasEntregarComision: 0,
+    gananciasVentasComision: 0,
+    idPersona: data.id
+  });
 }
 
 Procedures.encryptedPassword = (password) =>{

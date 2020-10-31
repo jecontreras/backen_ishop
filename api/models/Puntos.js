@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
 
-    idPersonas:{
+    idPersona:{
         model: 'personas',
         required: true
     },
@@ -17,9 +17,9 @@ module.exports = {
         type: 'integer',
         required: true
     },
-    valorEntrante:{
+    tipoEntrada:{
         type: 'integer',
-        required: true
+        defaultsTo: 0 // 0 entrada 1 salida
     },
     valorTotal:{
         type: 'integer',
@@ -30,8 +30,15 @@ module.exports = {
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado 
+        defaultsTo: 0
+    },
+    ordenando:{
+        type: 'integer',
         required: true
     },
+    factura:{
+        model: 'facturas'
+    }
 
   },
 

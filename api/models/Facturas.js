@@ -17,7 +17,7 @@ module.exports = {
         required: true
     },
     estado:{
-        type: 'number',  //0 activo - 1 eliminado 
+        type: 'number',  //0 proceso- 1 completado 2 Eliminado 3 Cancelado 4 Novedad 5 Enviado 
         defaultsTo: 0
     },
     codigo:{
@@ -68,6 +68,9 @@ module.exports = {
         type: 'string'
     },
     idRemesa:{
+        type: 'string'
+    },
+    empresaTrans:{
         type: 'string'
     }
 

@@ -7,6 +7,8 @@
 
 let Procedures = Object();
 let EstadosList = ["En Proceso", 'Completado', 'Eliminado', 'Cancelado', 'Novedad', 'Enviando'];
+const _ = require('lodash');
+
 Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
@@ -27,6 +29,7 @@ Procedures.create = async(req, res)=>{
     if(!cliente) return res.status(400).send({status:400, data: "Error al crear el cliente"});
     if(!cliente.id) return res.status(400).send({status:400, data: "Error al crear el cliente"});
     params.factura.idCliente = cliente.id;
+    params.factura.barrioCliente = params.cliente.barrioCliente;
     resultado = await Procedures.createFactura( params.factura );
     for(let row of params.articulo){
         let data = {
@@ -40,6 +43,7 @@ Procedures.create = async(req, res)=>{
     }
     resultado = await Facturas.findOne({ id: resultado.id }).populate('idCliente').populate('idVendedor');
     resultado.productos = await FacturasArticulos.find({factura: resultado.id}).populate('producto');
+    let rpx = await ResumenCuenta.validandoEventosNew( { id: resultado.id, idVendedor: resultado.idVendedor.id, estado: resultado.estado } );
     return res.ok({status:200, data: resultado });
 }
 
@@ -77,5 +81,15 @@ Procedures.createFacturaArticulo = async(data)=>{
     return resultado;
 }
 
+Procedures.update = async( req, res )=>{
+    let params = req.allParams();
+    // actualizacion de la factura
+    await Facturas.update( { id: params.id }, params );
+
+    let result = await ResumenCuenta.validandoEventosNew( params );
+
+    if( !result.status !== 200 ) return res.status( 200 ).send( result );
+    return res.status(200).send( { status: 200, data: "Completado Exitos"});
+}
 
 module.exports = Procedures;

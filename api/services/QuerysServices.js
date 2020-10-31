@@ -11,6 +11,7 @@ module.exports = async(modelo, query)=>{
   let count = query.where;
   let filtro = {};
   if( query.sort ) filtro.sort = query.sort;
+  else query.sort = 'createdAt DESC';
   filtro.where = query.where;
   console.log("***********", query, filtro)
 
