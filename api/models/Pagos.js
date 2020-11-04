@@ -8,21 +8,33 @@
 module.exports = {
 
   attributes: {
-
+    nombreVendedor:{
+      type: 'string'
+    },
+    numeroWhatVendedor:{
+      type: 'string'
+    },
+    documentoVendedor:{
+      type: 'string'
+    },
     idPersona: {
-        model: 'personas'
+        model: 'personas',
+        required:true
     },
     monto: {
-        type: 'integer'
+        type: 'integer',
+        required:true
     },
     detalle:{
         type: 'string'
     },
     estado:{
-        type: 'number'  //0 activo - 1 eliminado 
+        type: 'number',  //0 activo - 1 eliminado
+        defaultsTo: 0
     },
     idBanco:{
-        model: 'bancos'
+        model: 'bancos',
+        required:true
     }
 
   },

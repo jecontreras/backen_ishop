@@ -11,8 +11,15 @@ module.exports = {
     titulo: {
         type: 'string'
     },
-    detalle:{
+    numero:{
         type: 'string'
+    },
+    tipoCuenta:{
+      type: 'string',
+      //ahorros corriente
+    },
+    nombreCuenta:{
+      type: 'string'
     },
     estado:{
         type: 'number',  //0 activo - 1 eliminado

@@ -20,9 +20,18 @@ module.exports = [
     "redirectTo": "/tabs/categorias"
   },
   {
+    "icon": "filter-outline",
+    "name": "Cobros",
+    "redirectTo": "/tabs/cobros"
+  },
+  {
+    "icon": "filter-outline",
+    "name": "Catalogo",
+    "redirectTo": "/tabs/catalogo"
+  },
+  {
     "icon": "people-outline",
     "name": "Clientes",
     "redirectTo": "/tabs/clientes"
   },
 ];
-  
