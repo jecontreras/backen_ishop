@@ -14,9 +14,8 @@ Procedures.validandoEntrada = async ( data ) => {
     } else {
         data.valorAnterior = puntoAnt.valorTotal;
         data.tipoEntrada = 1;
-        data.valorTotal = parseFloat( ( puntoAnt.valorTotal || 0) ) - parseFloat( data.valorEntrante );
+        data.valorTotal = ( parseFloat( ( puntoAnt.valorTotal || 0) ) - parseFloat( data.valorEntrante ) || 0 );
     }
-    if( data )
     data.ordenando = puntoAnt.ordenando + 1;
     data.codigo = codigo();
     resultado = await Puntos.create(data).fetch();
@@ -66,10 +65,12 @@ Procedures.validandoEventosNew = async( params )=>{
     let result = Object();
     let facturaData = Object();
 
-    facturaData = await Facturas.findOne( { where: { id: params.id } } );
-    // validando si ya se le dio ese punto
-    result = await Puntos.findOne( { factura: params.id });
-    if( !result && params.estado == 1 ) await Procedures.Resumen( facturaData );
+    if( params.id ){
+        facturaData = await Facturas.findOne( { where: { id: params.id } } );
+        // validando si ya se le dio ese punto
+        result = await Puntos.findOne( { factura: params.id });
+        if( !result && params.estado == 1 ) await Procedures.Resumen( facturaData );
+    }
 
     extra = await Facturas.find( { idVendedor: params.idVendedor, estado: 1 });
     resultado.gananciasVentasTotales = _.sumBy( extra, ( row )=> row.comision );
@@ -86,8 +87,18 @@ Procedures.validandoEventosNew = async( params )=>{
 
     result = await ResumenPersona.findOne( { where: { idPersona: params.idVendedor, estado: 0 } } );
     if( !result ) return { status: 400, data: "Error no se encontro resumenPersona"};
+
+    let pagosRel = await Pagos.find( { where: { idPersona: params.idVendedor, estado: [ 0, 1 ]} });
+    resultado.cobrosCobrados = _.sumBy( pagosRel, ( row )=> row.monto );
+    resultado.gananciasVentasTotales = ( resultado.gananciasVentasTotales - resultado.cobrosCobrados || 0 );
     result = await ResumenPersona.update( { id: result.id }, resultado ).fetch();
     return { status: 200, data: resultado };
+}
+
+Procedures.restandoPuntos = async( data )=>{
+    let resultado = Object();
+    resultado = await Procedures.validandoEventosNew( { idVendedor: data.idVendedor } );
+    return resultado;
 }
 
 Procedures.Resumen = async( data )=>{

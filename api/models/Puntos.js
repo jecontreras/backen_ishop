@@ -17,6 +17,10 @@ module.exports = {
         type: 'integer',
         required: true
     },
+    valorEntrante:{
+        type: 'integer',
+        required: true
+    },
     tipoEntrada:{
         type: 'integer',
         defaultsTo: 0 // 0 entrada 1 salida

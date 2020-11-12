@@ -23,6 +23,7 @@ Procedures.create = async( req, res )=>{
     idPersona: params.idPersona
   } );
   resultado = await Pagos.create( params ).fetch();
+  resultado = await ResumenCuenta.restandoPuntos( { idVendedor: params.idPersona } );
   return res.status( 200 ).send( resultado );
 }
 

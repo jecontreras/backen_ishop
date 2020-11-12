@@ -45,6 +45,12 @@ module.exports = {
       defaultsTo: 0
     },
 
+    // cobros cobrados -------------------
+    cobrosCobrados:{
+      type: 'integer',
+      defaultsTo: 0
+    },
+
     // valor anterior de mi dinero total
     valorAnterior:{
       type: 'integer',

@@ -29,7 +29,7 @@ module.exports = {
         type: 'string'
     },
     estado:{
-        type: 'number',  //0 activo - 1 eliminado
+        type: 'number',  //0 activo - 1 completado // 2 -eliminado 3 -cancelado 4 novedad
         defaultsTo: 0
     },
     idBanco:{
