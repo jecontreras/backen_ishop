@@ -27,7 +27,7 @@ module.exports = [
   {
     "icon": "filter-outline",
     "name": "Catalogo",
-    "redirectTo": "/tabs/catalogo"
+    "redirectTo": "/tabs/catalogos"
   },
   {
     "icon": "people-outline",
