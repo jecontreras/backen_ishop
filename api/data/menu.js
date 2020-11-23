@@ -14,18 +14,23 @@ module.exports = [
     "name": "Regalos",
     "redirectTo": "/tabs/regalos"
   },
+  // {
+  //   "icon": "filter-outline",
+  //   "name": "Categorias",
+  //   "redirectTo": "/tabs/categorias"
+  // },
   {
-    "icon": "filter-outline",
-    "name": "Categorias",
-    "redirectTo": "/tabs/categorias"
-  },
-  {
-    "icon": "filter-outline",
+    "icon": "cash-outline",
     "name": "Cobros",
     "redirectTo": "/tabs/cobros"
   },
   {
-    "icon": "filter-outline",
+    "icon": "body-outline",
+    "name": "Embajadores",
+    "redirectTo": "/tabs/embajadores"
+  },
+  {
+    "icon": "file-tray-stacked-outline",
     "name": "Catalogo",
     "redirectTo": "/tabs/catalogos"
   },
