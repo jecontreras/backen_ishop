@@ -39,4 +39,9 @@ module.exports = [
     "name": "Clientes",
     "redirectTo": "/tabs/clientes"
   },
+  {
+    "icon": "warning-outline",
+    "name": "Ayudas",
+    "redirectTo": "/ayudas"
+  },
 ];
