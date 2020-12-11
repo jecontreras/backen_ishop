@@ -15,6 +15,9 @@ module.exports = {
     contenido:{
         type: 'string'
     },
+    url:{
+        type: 'string'
+    },
     estado:{
         type: 'number'  //0 activo - 1 eliminado 
     }
