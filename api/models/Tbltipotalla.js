@@ -13,7 +13,8 @@ module.exports = {
         type: 'string'
     },
     tit_sw_activo:{
-        type: 'number'
+        type: 'number',
+        defaultsTo: 0
     }
 
   },
