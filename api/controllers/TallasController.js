@@ -11,6 +11,9 @@ Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
     resultado = await QuerysServices(Tallas,params);
+    for( let row of resultado.data ){
+        row.nombre = Number( row.nombre );
+    }
     return res.ok( { status: 200, ...resultado } );
 }
 

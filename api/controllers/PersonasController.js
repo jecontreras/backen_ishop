@@ -70,6 +70,15 @@ Procedures.encryptedPassword = (password) =>{
 
 }
 
+Procedures.cambiarpass = async( req, res )=>{
+  let params = req.allParams();
+  let resultado = Object();
+  let pass = await Procedures.encryptedPassword( params.password );
+  if( !pass ) return res.status( 400 ).send( { data: "Error Actualizado" });
+  resultado = await Personas.update( { id: params.id }, { password: pass });
+  return res.status( 200 ).send( { data: "Actualizado" });
+} 
+
 Procedures.login = async function(req, res){
     Personas.findOne({cedula: req.param('cedula')}).populate('rol').exec(function(err, user){
         if(err) return res.send({'success': false,'message': 'Peticion fallida','data': err});
@@ -102,6 +111,9 @@ Procedures.querys = async(req, res)=>{
     let params = req.allParams();
     let resultado = Object();
     resultado = await QuerysServices(Personas,params);
+    for( let row of resultado.data ){
+      row.rol = await Roles.findOne( { id: row.rol });
+    }
     return res.ok( { status: 200, ...resultado } );
 }
 
