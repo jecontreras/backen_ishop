@@ -67,6 +67,10 @@ module.exports = {
         type: 'integer',
         defaultsTo: 5
     },
+    ordenamiento: {
+        type: 'integer',
+        defaultsTo: 0
+    },
     product_code: {
         type: 'string',
         defaultsTo: '16132243'
