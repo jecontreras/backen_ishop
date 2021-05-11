@@ -10,7 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "crypto": "^1.0.1",
     "grunt": "1.0.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "machinepack-passwords": "^2.3.0",
     "moment": "^2.24.0",
     "nodemon": "^2.0.2",
